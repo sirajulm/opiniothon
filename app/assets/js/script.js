@@ -38,7 +38,7 @@ angular.module('opinioApp').controller('mainController', function($scope) {
         });
     }
 }).controller('analyticsController', function ($scope, crmFactory) {
-    var newData = crmFactory.couponVsUser("mid123456");
+
     $scope.locData = crmFactory.couponVsLocation("mid123456");
     $scope.pieCoupons = Object.keys($scope.locData.data)[0]
     $scope.getRandomColor = function () {
@@ -50,42 +50,40 @@ angular.module('opinioApp').controller('mainController', function($scope) {
         return color;
     };
 
-    var ctx = document.getElementById("myChart");
-
-    var xlabels = newData.coupons;
-    var data = newData.users;
-    var dataset = {
-        labels: xlabels,
-        datasets: [
-            {
-                data: data,
-                backgroundColor: data.map(function(val){
-                    return $scope.getRandomColor()
-                })
-            }]
-    };
-    console.log($scope.pieCoupons, $scope.locData.data)
-
-    $scope.myBarChart = new Chart(ctx,{
-        type: 'bar',
-        data: dataset
-    });
+    $scope.drawBar = function () {
+        var ctx = document.getElementById("myChart");
+        $scope.barData = crmFactory.couponVsUser("mid123456");
+        $scope.barDataset = {
+            labels: $scope.barData.coupons,
+            datasets: [
+                {
+                    data: $scope.barData.users,
+                    backgroundColor: $scope.barData.users.map(function(val){
+                        return $scope.getRandomColor()
+                    })
+                }]
+        };
+        $scope.myBarChart = new Chart(ctx,{
+            type: 'bar',
+            data: $scope.barDataset
+        });
+    }
 
     $scope.drawPie = function (){
         var pieCtx = document.getElementById("myPieChart");
         $scope.pieDataset = {
-            labels: [1,2,3],//Object.keys($scope.locData.data[$scope.pieCoupons]),
+            labels: Object.keys($scope.locData.data[$scope.pieCoupons]),
             datasets: [
                 {
                     data: Object.keys($scope.locData.data[$scope.pieCoupons]).map(function (value) {
                         return $scope.locData.data[$scope.pieCoupons][value];
                     }),
-                    backgroundColor: data.map(function(val){
+                    backgroundColor: Object.keys($scope.locData.data[$scope.pieCoupons]).map(function(val){
                         return $scope.getRandomColor()
                     })
                 }]
         };
-        $scope.myPieChart = new Chart(ctx,{
+        $scope.myPieChart = new Chart(pieCtx,{
             type: 'doughnut',
             data: $scope.pieDataset
         });
@@ -102,6 +100,9 @@ angular.module('opinioApp').controller('mainController', function($scope) {
         }
         return color;
     }
+
+    $scope.drawBar();
+    $scope.drawPie();
 }).factory('crmFactory', function () {
     var url = 'http://172.31.99.174:8081'
     var object = {
