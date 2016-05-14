@@ -38,9 +38,9 @@ angular.module('opinioApp').controller('mainController', function($scope) {
         });
     }
 }).controller('analyticsController', function ($scope, crmFactory) {
-
+    $scope.barData = crmFactory.couponVsUser("mid123456");
     $scope.locData = crmFactory.couponVsLocation("mid123456");
-    $scope.pieCoupons = Object.keys($scope.locData.data)[0]
+    $scope.pieCoupons = Object.keys($scope.locData.data)[0];
     $scope.getRandomColor = function () {
         var letters = '0123456789ABCDEF'.split('');
         var color = '#';
@@ -52,7 +52,6 @@ angular.module('opinioApp').controller('mainController', function($scope) {
 
     $scope.drawBar = function () {
         var ctx = document.getElementById("myChart");
-        $scope.barData = crmFactory.couponVsUser("mid123456");
         $scope.barDataset = {
             labels: $scope.barData.coupons,
             datasets: [
@@ -67,7 +66,7 @@ angular.module('opinioApp').controller('mainController', function($scope) {
             type: 'bar',
             data: $scope.barDataset
         });
-    }
+    };
 
     $scope.drawPie = function (){
         var pieCtx = document.getElementById("myPieChart");
@@ -78,7 +77,7 @@ angular.module('opinioApp').controller('mainController', function($scope) {
                     data: Object.keys($scope.locData.data[$scope.pieCoupons]).map(function (value) {
                         return $scope.locData.data[$scope.pieCoupons][value];
                     }),
-                    backgroundColor: Object.keys($scope.locData.data[$scope.pieCoupons]).map(function(val){
+                    backgroundColor: Object.keys($scope.locData.coupons).map(function(val){
                         return $scope.getRandomColor()
                     })
                 }]
@@ -87,11 +86,11 @@ angular.module('opinioApp').controller('mainController', function($scope) {
             type: 'doughnut',
             data: $scope.pieDataset
         });
-    }
+    };
 
     $scope.updatePie = function () {
         $scope.drawPie();
-    }
+    };
     $scope.getRandomColor = function () {
         var letters = '0123456789ABCDEF'.split('');
         var color = '#';
