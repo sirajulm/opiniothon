@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aacce50e-6a3e-4def-b664-52e0e68050e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/css/style.css" afterPath="$PROJECT_DIR$/app/assets/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/js/script.js" afterPath="$PROJECT_DIR$/app/assets/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/analytics.html" afterPath="$PROJECT_DIR$/views/partials/analytics.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/form-complete.html" afterPath="$PROJECT_DIR$/views/partials/form-complete.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/form.html" afterPath="$PROJECT_DIR$/views/partials/form.html" />
     </list>
     <ignored path="opiniothon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,10 +36,10 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="90" column="47" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
+            <state relative-caret-position="771">
+              <caret line="188" column="21" selection-start-line="188" selection-start-column="13" selection-end-line="188" selection-end-column="21" />
               <folding>
-                <element signature="e#3547#5576#0" expanded="false" />
+                <element signature="e#3609#5638#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -388,12 +382,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1463219826275</updated>
-      <workItem from="1463219827919" duration="26914000" />
+      <workItem from="1463219827919" duration="28127000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26914000" />
+    <option name="totallyTimeSpent" value="28127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1368" height="718" extended-state="6" />
@@ -516,10 +510,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="90" column="47" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
+        <state relative-caret-position="771">
+          <caret line="188" column="21" selection-start-line="188" selection-start-column="13" selection-end-line="188" selection-end-column="21" />
           <folding>
-            <element signature="e#3547#5576#0" expanded="false" />
+            <element signature="e#3609#5638#0" expanded="false" />
           </folding>
         </state>
       </provider>

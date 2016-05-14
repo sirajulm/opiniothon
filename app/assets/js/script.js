@@ -51,7 +51,7 @@ angular.module('opinioApp').controller('mainController', function($scope) {
     };
 
     var ctx = document.getElementById("myChart");
-    var pieCtx = document.getElementById("myPieChart");
+
     var xlabels = newData.coupons;
     var data = newData.users;
     var dataset = {
@@ -65,30 +65,34 @@ angular.module('opinioApp').controller('mainController', function($scope) {
             }]
     };
     console.log($scope.pieCoupons, $scope.locData.data)
-    $scope.pieDataset = {
-        labels: [1,2,3],//Object.keys($scope.locData.data[$scope.pieCoupons]),
-        datasets: [
-            {
-                data: Object.keys($scope.locData.data[$scope.pieCoupons]).map(function (value) {
-                    return $scope.locData.data[$scope.pieCoupons][value];
-                }),
-                backgroundColor: data.map(function(val){
-                    return $scope.getRandomColor()
-                })
-            }]
-    };
+
     $scope.myBarChart = new Chart(ctx,{
         type: 'bar',
         data: dataset
     });
 
-    $scope.myPieChart = new Chart(ctx,{
-        type: 'doughnut',
-        data: $scope.pieDataset
-    });
+    $scope.drawPie = function (){
+        var pieCtx = document.getElementById("myPieChart");
+        $scope.pieDataset = {
+            labels: [1,2,3],//Object.keys($scope.locData.data[$scope.pieCoupons]),
+            datasets: [
+                {
+                    data: Object.keys($scope.locData.data[$scope.pieCoupons]).map(function (value) {
+                        return $scope.locData.data[$scope.pieCoupons][value];
+                    }),
+                    backgroundColor: data.map(function(val){
+                        return $scope.getRandomColor()
+                    })
+                }]
+        };
+        $scope.myPieChart = new Chart(ctx,{
+            type: 'doughnut',
+            data: $scope.pieDataset
+        });
+    }
 
     $scope.updatePie = function () {
-        $scope.myPieChart = new Chart(pieCtx).Doughnut($scope.pieDataset)
+        $scope.drawPie();
     }
     $scope.getRandomColor = function () {
         var letters = '0123456789ABCDEF'.split('');
