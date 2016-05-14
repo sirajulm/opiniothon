@@ -1,6 +1,12 @@
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-        <canvas id="myChart" width="400" height="400"></canvas>
+        <canvas id="myChart" class="chart" width="400" height="400" style=""></canvas>
+    </div>
+    <div class="col-sm-8 col-sm-offset-2">
+        <select name="pieCoupons" ng-model="pieCoupons" ng-change="updatePie()">
+            <option ng-repeat="coupon in locData.coupons" value="{{ coupon }}">{{coupon}}</option>
+        </select>
+        <canvas id="myPieChart" class="chart" width="400" height="400" style=""></canvas>
     </div>
     <script>
 

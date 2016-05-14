@@ -7,6 +7,10 @@ body{
     background: #151515;
     color: #EBEBEB
 }
+#chart {
+    width: 400px !important;
+    height: 400px !important;
+}
 #form-container{
     background:#2f2f2f;
     margin-bottom:20px;

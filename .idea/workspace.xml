@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aacce50e-6a3e-4def-b664-52e0e68050e6" name="Default" comment="" />
+    <list default="true" id="aacce50e-6a3e-4def-b664-52e0e68050e6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/css/style.css" afterPath="$PROJECT_DIR$/app/assets/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/js/script.js" afterPath="$PROJECT_DIR$/app/assets/js/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/analytics.html" afterPath="$PROJECT_DIR$/views/partials/analytics.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/form-complete.html" afterPath="$PROJECT_DIR$/views/partials/form-complete.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/form.html" afterPath="$PROJECT_DIR$/views/partials/form.html" />
+    </list>
     <ignored path="opiniothon.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,19 +32,21 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="83" selection-start-line="8" selection-start-column="83" selection-end-line="8" selection-end-column="83" />
+            <state relative-caret-position="315">
+              <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-              <folding />
+            <state relative-caret-position="247">
+              <caret line="90" column="47" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
+              <folding>
+                <element signature="e#3547#5576#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/views/partials/analytics.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="5" column="76" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -54,8 +64,8 @@
       <file leaf-file-name="form.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/partials/form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="86" selection-start-line="8" selection-start-column="86" selection-end-line="8" selection-end-column="86" />
+            <state relative-caret-position="165">
+              <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -64,14 +74,14 @@
       <file leaf-file-name="form-complete.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/partials/form-complete.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
+            <state relative-caret-position="75">
+              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form-coupon.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="form-coupon.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/partials/form-coupon.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="462">
@@ -94,8 +104,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+            <state relative-caret-position="134">
+              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -113,6 +123,9 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -124,12 +137,13 @@
         <option value="$PROJECT_DIR$/views/partials/form-interests.html" />
         <option value="$PROJECT_DIR$/views/partials/form-payment.html" />
         <option value="$PROJECT_DIR$/views/partials/form-profile.html" />
-        <option value="$PROJECT_DIR$/app/assets/css/style.css" />
         <option value="$PROJECT_DIR$/views/partials/form-coupon.html" />
+        <option value="$PROJECT_DIR$/views/partials/form.html" />
         <option value="$PROJECT_DIR$/views/index.html" />
+        <option value="$PROJECT_DIR$/views/partials/form-complete.html" />
+        <option value="$PROJECT_DIR$/app/assets/css/style.css" />
         <option value="$PROJECT_DIR$/views/partials/analytics.html" />
         <option value="$PROJECT_DIR$/app/assets/js/script.js" />
-        <option value="$PROJECT_DIR$/views/partials/form.html" />
       </list>
     </option>
   </component>
@@ -163,7 +177,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -374,12 +388,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1463219826275</updated>
-      <workItem from="1463219827919" duration="14219000" />
+      <workItem from="1463219827919" duration="26914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14219000" />
+    <option name="totallyTimeSpent" value="26914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1368" height="718" extended-state="6" />
@@ -428,14 +442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/data.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="10" selection-start-line="9" selection-start-column="4" selection-end-line="16" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -444,10 +450,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/css/style.css">
+    <entry file="file://$PROJECT_DIR$/views/partials/data.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        <state relative-caret-position="240">
+          <caret line="16" column="10" selection-start-line="9" selection-start-column="4" selection-end-line="16" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/form-coupon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="37" column="10" selection-start-line="33" selection-start-column="4" selection-end-line="37" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -460,10 +474,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="83" selection-start-line="8" selection-start-column="83" selection-end-line="8" selection-end-column="83" />
+        <state relative-caret-position="315">
+          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/form-complete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -471,40 +509,18 @@
     <entry file="file://$PROJECT_DIR$/views/partials/analytics.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <caret line="5" column="76" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="86" selection-start-line="8" selection-start-column="86" selection-end-line="8" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/form-complete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/form-coupon.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="37" column="10" selection-start-line="33" selection-start-column="4" selection-end-line="37" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="247">
+          <caret line="90" column="47" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
+          <folding>
+            <element signature="e#3547#5576#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

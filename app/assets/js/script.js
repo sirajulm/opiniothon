@@ -29,14 +29,18 @@ angular.module('opinioApp').config(function($stateProvider, $urlRouterProvider) 
 });
 
 angular.module('opinioApp').controller('mainController', function($scope) {
-    $scope.message = 'Everyone come and see how good I look!';
-    console.log($scope.message)
-}).controller('dataController', function ($scope) {
+
+}).controller('dataController', function ($scope, crmFactory) {
     $scope.formData = {};
-    $scope.processForm = function() {
-        console.log('awesome!');
-    };
-}).controller('analyticsController', function ($scope) {
+    $scope.submitForm = function () {
+        crmFactory.postCoupon($scope.formData).then(function (response) {
+            $scope.formData = {};
+        });
+    }
+}).controller('analyticsController', function ($scope, crmFactory) {
+    var newData = crmFactory.couponVsUser("mid123456");
+    $scope.locData = crmFactory.couponVsLocation("mid123456");
+    $scope.pieCoupons = Object.keys($scope.locData.data)[0]
     $scope.getRandomColor = function () {
         var letters = '0123456789ABCDEF'.split('');
         var color = '#';
@@ -47,8 +51,9 @@ angular.module('opinioApp').controller('mainController', function($scope) {
     };
 
     var ctx = document.getElementById("myChart");
-    var xlabels = ["Red", "green", "blue"];
-    var data = [300, 50, 100];
+    var pieCtx = document.getElementById("myPieChart");
+    var xlabels = newData.coupons;
+    var data = newData.users;
     var dataset = {
         labels: xlabels,
         datasets: [
@@ -59,30 +64,32 @@ angular.module('opinioApp').controller('mainController', function($scope) {
                 })
             }]
     };
-    var myPieChart = new Chart(ctx,{
-        type: 'pie',
+    console.log($scope.pieCoupons, $scope.locData.data)
+    $scope.pieDataset = {
+        labels: [1,2,3],//Object.keys($scope.locData.data[$scope.pieCoupons]),
+        datasets: [
+            {
+                data: Object.keys($scope.locData.data[$scope.pieCoupons]).map(function (value) {
+                    return $scope.locData.data[$scope.pieCoupons][value];
+                }),
+                backgroundColor: data.map(function(val){
+                    return $scope.getRandomColor()
+                })
+            }]
+    };
+    $scope.myBarChart = new Chart(ctx,{
+        type: 'bar',
         data: dataset
     });
-    /*
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: xlabels,
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3]
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            }
-        }
-    });*/
+
+    $scope.myPieChart = new Chart(ctx,{
+        type: 'doughnut',
+        data: $scope.pieDataset
+    });
+
+    $scope.updatePie = function () {
+        $scope.myPieChart = new Chart(pieCtx).Doughnut($scope.pieDataset)
+    }
     $scope.getRandomColor = function () {
         var letters = '0123456789ABCDEF'.split('');
         var color = '#';
@@ -91,4 +98,116 @@ angular.module('opinioApp').controller('mainController', function($scope) {
         }
         return color;
     }
+}).factory('crmFactory', function () {
+    var url = 'http://172.31.99.174:8081'
+    var object = {
+        postCoupon: postCoupon,
+        getUsage: getUsage,
+        couponVsUser: couponVsUser,
+        couponVsLocation: couponVsLocation
+    }
+
+    var couponUsage = {
+        "mid123456": {
+            "merchantName": "Free Food",
+            "coupons": [],
+            "couponUsage": {
+                "cid123": {
+                    "users": [{
+                        "id": "uid111",
+                        "date": "01/05/2016 10:30",
+                        "location": "1"
+                    }, {
+                        "id": "uid112",
+                        "date": "01/05/2016 11:43",
+                        "location": "2"
+                    }, {
+                        "id": "uid113",
+                        "date": "01/05/2016 12:00",
+                        "location": "1"
+                    }, {
+                        "id": "uid114",
+                        "date": "01/05/2016 10:30",
+                        "location": "3"
+                    }]
+                },
+                "cid125": {
+                    "users": [{
+                        "id": "uid101",
+                        "date": "01/05/2016 10:30",
+                        "location": "2"
+                    }, {
+                        "id": "uid10",
+                        "date": "01/05/2016 11:43",
+                        "location": "2"
+                    }, {
+                        "id": "uid111",
+                        "date": "01/05/2016 12:00",
+                        "location": "1"
+                    }, {
+                        "id": "uid217",
+                        "date": "01/05/2016 10:30",
+                        "location": "2"
+                    }, {
+                        "id": "uid10",
+                        "date": "01/05/2016 11:46",
+                        "location": "2"
+                    }, {
+                        "id": "uid101",
+                        "date": "01/05/2016 12:15",
+                        "location": "3"
+                    }, {
+                        "id": "uid237",
+                        "date": "01/05/2016 11:30",
+                        "location": "1"
+                    }]
+                }
+            }
+        }
+    }
+
+    function postCoupon(data) {
+        var endpoint = '/addcoupon';
+
+        return fetch(url+endpoint,{
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(function(response) {
+            return response.json();
+        }).then(function (response){
+            console.log(response)
+        });
+    }
+    function getUsage(merchantID) {
+        return couponUsage[merchantID]
+    }
+    function couponVsUser(merchantID) {
+        var usage = getUsage(merchantID).couponUsage;
+        var data = {coupons:[],users: []}
+        for(var id in usage){
+            data.coupons.push(id)
+            data.users.push(usage[id].users.length)
+        }
+        return data;
+    }
+
+    function couponVsLocation(merchantID) {
+        var usage = getUsage(merchantID).couponUsage;
+        var data = []
+        var coupons = [];
+        for (var id in usage){
+            coupons.push(id);
+            data[id] = {};
+            for(var user in usage[id].users){
+                var currentUser = usage[id].users[user];
+                data[id][currentUser.location] = (data[id][currentUser.location] || 0) + 1;
+            }
+        }
+        return {coupons: coupons, data: data};
+    }
+    return object;
 })
