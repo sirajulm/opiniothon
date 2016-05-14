@@ -1,0 +1,39 @@
+<label>Enter COupon Details</label>
+<div class="form-group">
+    <label for="c-name">Coupon Name</label>
+    <input type="text" class="form-control" ng-model="formData.coupon" name="c-name" id="c-name" placeholder="Coupon Name">
+</div>
+<div class="form-group">
+    <label for="c-discount">Discount</label>
+    <input type="text" class="form-control" ng-model="formData.discount" name="c-discount" id="c-discount" placeholder="Discount">
+</div>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="formData.type" value="fixed" checked>
+            Fixed Amount
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="formData.type" value="percent">
+            Percentage
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <label for="c-validity">Validity</label>
+    <input id="c-validity" name="c-validity" ng-model="formData.validity" class="form-control" type="date" value=""/>
+</div>
+<div class="form-group">
+    <label for="c-desc">Coupon Description</label>
+    <input type="text" class="form-control" ng-model="formData.description" name="c-desc" id="c-desc" placeholder="Coupon Description">
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-6 col-xs-offset-3">
+        <a ui-sref="data.complete" class="btn btn-block btn-info">
+            Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </a>
+    </div>
+</div>
