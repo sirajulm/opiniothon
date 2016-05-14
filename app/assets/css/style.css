@@ -7,6 +7,29 @@ body{
     background: #151515;
     color: #EBEBEB
 }
+.heading {
+    text-transform: uppercase;
+    color: #080808;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.chart-container {
+    margin-bottom: 50px;
+    border: 1px solid rgba(0,0,0,1);
+}
+.select-coupon {
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: rgba(0,0,0,0.5);
+    color: #FFF;
+    width:300px;
+}
+.graph-against {
+    margin-top: 10px;
+    color: #080808;
+    text-align: center;
+}
 #chart {
     width: 400px !important;
     height: 400px !important;

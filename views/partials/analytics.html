@@ -1,14 +1,21 @@
+<h2 class="heading">Coupon Consumption Statistics</h2>
 <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-sm-8 col-sm-offset-2 chart-container">
         <canvas id="myChart" class="chart" width="400" height="400" style=""></canvas>
+        <p class="col-sm-12 graph-against">Coupons to No. of Users</p>
     </div>
-    <select class="form-control" name="pieCoupons" ng-model="pieCoupons" ng-change="updatePie()">
+    <select class="form-control select-coupon" name="pieCoupons" ng-model="pieCoupons" ng-change="updatePie()">
         <option ng-repeat="coupon in locData.coupons" value="{{ coupon }}">{{coupon}}</option>
     </select>
-    <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-sm-8 col-sm-offset-2 chart-container">
         <canvas id="myPieChart" class="chart" width="400" height="400" style=""></canvas>
+        <p class="col-sm-12 graph-against">Coupon to Location</p>
     </div>
-    <script>
-
-    </script>
+    <select class="form-control select-coupon" name="lineCoupons" ng-model="lineCoupons" ng-change="updateLine()">
+        <option ng-repeat="coupon in timeData.coupons" value="{{ coupon }}">{{coupon}}</option>
+    </select>
+    <div class="col-sm-8 col-sm-offset-2 chart-container">
+        <canvas id="myLineChart" class="chart" width="400" height="400" style=""></canvas>
+        <p class="col-sm-12 graph-against">Coupon to Time</p>
+    </div>
 </div>
