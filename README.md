@@ -6,7 +6,7 @@ Use Cases:
 2. Submit new coupon to DB via API
 3. Visualize coupon usage
 
-# Working
+### Working
 
 This is a mock app which connects to the "opiniothon API" to get live analytics of the coupon consupmtion by the user for a given merchant.
 Each merchant requires to login to the system to visualize the coupons that have more traction. 
@@ -15,7 +15,8 @@ Coupon data are stored based on the time of consumption and also the location of
 It also provide option for the merchants to input new Coupons to the "opiniothon API" so that the users will be provided properly channelized notifications regarding the Coupons through our Android App.
 
 ### Data Structure - Array of Coupons submitted to API
-`{
+```
+{
     "merchantId1": {
         "merchantName": "Free Food",
         "coupons": [{
@@ -27,13 +28,15 @@ It also provide option for the merchants to input new Coupons to the "opiniothon
         }, {...}]
     }
     "merchantId2": {...}
-}`
+}
+```
 
 ## DataViz
 Create vizualisations to assist merchants in making data driven decisions about individual promotions and stores.
 
 ### Data Structure - Array of Coupon Usage fetched from API
-`{
+```
+{
     "merchantId1": {
         "merchantName": "Free Food",
         "couponUsage": {
@@ -50,14 +53,5 @@ Create vizualisations to assist merchants in making data driven decisions about 
             }
         }
     }
-}`
-
-### Mock Data
-* Fictitious Store LatLongs generated randomly within a square area. 
-* Fictitious Coupon values submitted for brands
-
-# Build & Run
-    npm install
-    node app
-
-
+}
+```
