@@ -113,6 +113,10 @@ angular.module('opinioApp')
                             "id": "uid27",
                             "date": "Sun May 15 2016 11:11:51 GMT+0530 (IST)",
                             "location": "LOC1"
+                        },{
+                            "id": "uid07",
+                            "date": "Sun May 15 2016 11:07:01 GMT+0530 (IST)",
+                            "location": "LOC2"
                         }]
                     }
                 }

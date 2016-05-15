@@ -8,6 +8,7 @@ angular.module('opinioApp')
             });
         }
     }).controller('analyticsController', function ($scope, crmFactory) {
+    
     $scope.barData = crmFactory.couponVsUser("mid123456");
     $scope.locData = crmFactory.couponVsLocation("mid123456");
     $scope.timeData = crmFactory.couponVsTime("mid123456");
@@ -36,7 +37,15 @@ angular.module('opinioApp')
         };
         $scope.myBarChart = new Chart(ctx,{
             type: 'bar',
-            data: $scope.barDataset
+            data: $scope.barDataset,
+            scales:{
+                xAxes:[{
+                    ticks:{
+                        beginAtZero: true
+                    }
+                }]
+            }
+
         });
     };
 
@@ -71,7 +80,9 @@ angular.module('opinioApp')
                     }),
                     backgroundColor: Object.keys($scope.timeData.coupons).map(function(val){
                         return $scope.getRandomColor()
-                    })
+                    }),
+                    fill: false,
+                    borderColor:"#4BC0C0"
                 }]
         };
         $scope.myLineChart = new Chart(lineCtx,{

@@ -17,11 +17,11 @@ angular.module('opinioApp').config(function($stateProvider, $urlRouterProvider) 
             templateUrl: 'partials/form-profile.html'
         })
         .state('data.coupon', {
-            url: '/interests',
+            url: '/coupon',
             templateUrl: 'partials/form-coupon.html'
         })
         .state('data.complete', {
-            url: '/payment',
+            url: '/complete',
             templateUrl: 'partials/form-complete.html'
         });
 
